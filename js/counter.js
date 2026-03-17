@@ -1,6 +1,7 @@
 export class Counter {
-    constructor(selector) {
-        this .count = 0;
+    constructor(selector, initialValue=0) {
+        this .count = initialValue;
+        this.initialValue = initialValue;
         this.selector = selector;
         this.mount();
     }
