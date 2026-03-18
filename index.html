@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Counter.js-Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="site-nav">
+        <div class="grid-con">
+            <div class="nav-inner col-span-full">
+                <span class="nav-logo">OOP</span>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="#overview">Overview</a></li>
+                    <li><a class="nav-link" href="#usage">Usage</a></li>
+                    <li><a class="nav-link" href="#demo">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="grid-con">
+            <div class="col-span-full m-col-span-8">
+                <span class="hero-badge">Modules</span>
+                <h1 class="hero-title">A Stateful <em>Counter</em> Component</h1>
+                <p class="hero-sub">A lightweight JS OOP class that encapsulates state and DOM updates-extensible via inheritance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="doc-section">
+        <div class="grid-con">
+            <div class="col-span-full">
+                <p class="section-label">Overview</p>
+                <h2 class="section-title">What it does</h2>
+                <p class="section-desc">Counter wraps state and DOM updates into one reusable class. Each instance owns its own container, count, and rendering making multiple independent counters trivial to add.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="usage" class="doc-section">
+        <div class="grid-con">
+            <div class="col-span-full">
+                <p class="section-label">Usage</p>
+                <h2 class="section-title">How to use it</h2>
+            </div>
+            <div class="col-span-full m-col-span-6">
+                <h3 class="usage-heading">1. Add a container in HTML</h3>
+                <div class="code-block"><pre><code>&lt;div id="my-counter"&gt;&lt;/div&gt;</code></pre></div>
+
+                <h3 class="usage-heading">2. Import and instantiate Counter</h3>
+                <div class="code-block"><pre><code>import { Counter } from './counter.js';
+                        const myCounter = new Counter('#my-counter', 5);</code></pre></div>
+
+                <h3 class="usage-heading">3. Or use StepCounter</h3>
+                <div class="code-block"><pre><code>import { StepCounter } from './StepCounter.js';
+                        const step = new StepCounter('#my-counter', 0, 5);</code></pre></div>
+            </div>
+            <div class="col-span-full m-col-span-6">
+                <h3 class="usage-heading">Parameters</h3>
+                <table class="params-table">
+                    <thead>
+                        <tr><th>Parameter</th><th>Type</th><th>Default</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>selector</td><td>string</td><td>Required</td></tr>
+                        <tr><td>initialValue</td><td>number</td><td>0</td></tr>
+                        <tr><td>step (StepCounter)</td><td>number</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="doc-section">
+        <div class="grid-con">
+            <div class="col-span-full">
+                <p class="section-label">Live Demo</p>
+                <h2 class="section-title">Four counters, one class</h2>
+            </div>
+            <div class="demo-card col-span-full m-col-span-6 l-col-span-3">
+                <p class="demo-label">Basic — starts at 0</p>
+                <div id="counter-container1"></div>
+            </div>
+            <div class="demo-card col-span-full m-col-span-6 l-col-span-3">
+                <p class="demo-label">Starts at 10</p>
+                <div id="counter-container2"></div>
+            </div>
+            <div class="demo-card col-span-full m-col-span-6 l-col-span-3">
+                <p class="demo-label">Step + or - 5</p>
+                <div id="counter-con"></div>
+            </div>
+            <div class="demo-card col-span-full m-col-span-6 l-col-span-3">
+                <p class="demo-label">Step + or - 10 from 20</p>
+                <div id="counter-con2"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="grid-con">
+            <p class="col-span-full">Built with JavaScript OOP &amp; GSAP</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+@use '../abstracts' as *;
+
+.counter-display {
+    font-family: $font-display;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: $text;
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+}
+
+button {
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin: 4px;
+    border: 1px solid $border;
+    padding: 10px 18px;
+    background: $surface;
+    color: $text;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.18s;
+
+    &:hover {
+        border-color: $accent;
+        color: $accent;
+    }
+
+    &.inactive {
+        opacity: 0.3;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.demo-card {
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 28px 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.demo-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $muted;
+    margin-bottom: 20px;
+}
