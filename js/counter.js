@@ -1,5 +1,6 @@
 export class Counter {
     constructor(selector, initialValue=0) {
+        // Initialize count and store initial value for reset
         this.count = initialValue;
         this.initialValue = initialValue;
         this.selector = selector;
@@ -7,6 +8,7 @@ export class Counter {
     }
 
     mount() {
+        // I used querySelector here since we already have the selector string ready
 
         this.container=document.querySelector(this.selector);
 
@@ -24,9 +26,13 @@ export class Counter {
         this.container.appendChild(this.incrementBtn);
         this.container.appendChild(this.resetBtn);
 
-        this.incrementBtn.addEventListener("click", this.increment.bind(this));
-        this.decrementBtn.addEventListener("click", this.decrement.bind(this));
-        this.resetBtn.addEventListener("click", this.reset.bind(this));
+        this.handleIncrement = this.increment.bind(this);
+        this.handleDecrement = this.decrement.bind(this);
+        this.handleReset = this.reset.bind(this);
+
+        this.incrementBtn.addEventListener("click", this.handleIncrement);
+        this.decrementBtn.addEventListener("click", this.handleDecrement);
+        this.resetBtn.addEventListener("click", this.handleReset);
 
         this.update();
     }
@@ -37,6 +43,7 @@ export class Counter {
     }
 
     decrement() {
+        // I'm checking for 0 first so the count never goes negative
         if (this.count > 0) {
             this.count--;
         }

@@ -1,5 +1,6 @@
 import { Counter } from './counter.js';
 
+        //I extended Counter instead of rewriting it because increment and decrement only need small changes
 
 export class StepCounter extends Counter {
     constructor(selector, initialValue= 0, step = 1) {
@@ -24,7 +25,7 @@ export class StepCounter extends Counter {
 
     addStepLabel() {
         const label= document.createElement("p");
-        label.textContent= `Step: ±${this.step}`;
+        label.textContent= `Step:+ or - ${this.step}`;
         this.container.appendChild(label);
     }
 }
